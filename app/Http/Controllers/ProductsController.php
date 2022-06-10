@@ -88,7 +88,7 @@ class ProductsController extends Controller
         
         $data->update();
 
-        return view('products.index')->with('success', 'product updateed successfuly');
+        return view('/')->with('success', 'product updateed successfuly');
     }
 
     public function destroy($id)

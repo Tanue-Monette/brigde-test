@@ -9,7 +9,7 @@
                 </div>
             </div>
         </div>
-    
+
         @if ($errors->any())
             <div class="alert alert-danger">
                 <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -20,10 +20,24 @@
                 </ul>
             </div>
         @endif
-    
+
+        @if (\Session::has('danger'))
+            <div class="alert alert-danger">
+                <ul>
+                    <li>{!! \Session::get('danger') !!}</li>
+                </ul>
+            </div>
+        @elseif(\Session::has('succes'))
+            <div class="alert alert-success">
+                <ul>
+                    <li>{!! \Session::get('success') !!}</li>
+                </ul>
+            </div>
+        @endif
+
         <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-    
+
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
@@ -53,8 +67,8 @@
                     <button type="submit" class="btn btn-primary">Add</button>
                 </div>
             </div>
-    
+
         </form>
     </div>
-    
+
 @endsection
