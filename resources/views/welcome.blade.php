@@ -31,8 +31,10 @@
                                 <br>
                                 <br>
                                 <h4>
-                                    <i class="fa-solid fa-plus"></i>
-                                    <span>Add Produt/Service</span>
+                                    <a href="/">
+                                        <i class="fa-solid fa-plus"></i>
+                                        <span>Add Produt/Service</span>
+                                    </a>
                                 </h4>
 
                                 <br>
