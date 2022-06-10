@@ -45,7 +45,7 @@
                                 </div>
                             </div>
                         </div>
-                        <img class="card-img-top" src="{{ url('public/images/' . $product->photo) }}"
+                        <img class="card-img-top" src="{{ url('public/assets/image' . $product->photo) }}"
                             alt="product item">
                         <div class="card-body">
                             <h3 class="card-title">Name: {{ $product->name }}</h3>

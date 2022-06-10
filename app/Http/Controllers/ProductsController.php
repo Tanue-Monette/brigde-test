@@ -41,7 +41,7 @@ class ProductsController extends Controller
         if($request->file('photo')){
             $file= $request->file('photo');
             $filename= date('YmdHi').$file->getClientOriginalName();
-            $file-> store(public_path('public/assets/image'), $filename);
+            $file->move(public_path('public/assets/'). $filename);
             $data['photo']= $filename;
         }
         
@@ -95,6 +95,6 @@ class ProductsController extends Controller
     {
         $course = Product::find($id);
         $course->destroy($id);
-        return  redirect()->route('product-index')->with('danger', 'product deleted successfully!!!'); 
+        return  redirect()->route('products-index')->with('danger', 'product deleted successfully!!!'); 
     }
 }

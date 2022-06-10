@@ -85,7 +85,6 @@
                                 alt="product item">
                             <div class="card-body">
                                 <h3 class="card-title">Name: {{ $product->name }}</h3>
-                                <p class="card-text">Energy - Energi for the storsge of yu food stuff</p>
                                 <p class="current_price">Price: {{ $product->price }}</p>
                                 <p class="current_price">Details: {{ $product->description }}</p>
                                 <a href="#" class="btn btn-primary">More</a>
