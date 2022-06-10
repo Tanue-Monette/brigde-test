@@ -41,7 +41,7 @@ class ProductsController extends Controller
         if($request->file('photo')){
             $file= $request->file('photo');
             $filename= date('YmdHi').$file->getClientOriginalName();
-            $file-> move(public_path('public/Images'), $filename);
+            $file-> store(public_path('public/assets/image'), $filename);
             $data['photo']= $filename;
         }
         

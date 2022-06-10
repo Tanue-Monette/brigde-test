@@ -19,11 +19,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/plugins.css">
+    <link rel="stylesheet" href="../assets/css/plugins.css">
 
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/custom.css">
 
     <style>
         .dropbtn {
@@ -69,66 +69,17 @@
         .show {
             display: block;
         }
+
+        .head {
+            background-color: #f1f1f1 !important;
+        }
     </style>
 </head>
 
 <body>
     <div id="app">
-        <header>
+        <header class="head">
             <div class="main_header">
-                <!--header top start-->
-                <div class="header_top">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6 col-md-6">
-                                <div class="support_info">
-                                </div>
-                            </div>
-                            @if (Route::has('login'))
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="top_right text-right">
-                                        <ul>
-                                            @auth
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <a href="{{ url('/home') }}"
-                                                            class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <li class="nav-item dropdown">
-                                                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
-                                                                role="button" data-bs-toggle="dropdown" aria-haspopup="true"
-                                                                aria-expanded="false" v-pre>
-                                                                {{ Auth::user()->name }}
-                                                            </a>
-
-                                                            <div class="dropdown-menu dropdown-menu-end"
-                                                                aria-labelledby="navbarDropdown">
-                                                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                                                    onclick="event.preventDefault();
-                                                                            document.getElementById('logout-form').submit();">
-                                                                    {{ __('Logout') }}
-                                                                </a>
-
-                                                                <form id="logout-form" action="{{ route('logout') }}"
-                                                                    method="POST" class="d-none">
-                                                                    @csrf
-                                                                </form>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                            @else
-                                                <li><a href="{{ route('login') }}">Login</a></li>
-                                            @endauth
-                                        </ul>
-                                    </div>
-                                </div>
-                            @endif
-
-                        </div>
-                    </div>
-                </div>
-                <!--header top start-->
                 <!--header middel start-->
                 <div class="header_middle">
                     <div class="container">
@@ -149,13 +100,53 @@
                                         </form>
                                     </div>
                                     <div class="middel_right_info">
-                                        <div class="header_wishlist">
-                                            <a href="#"><img src="assets/img/user.png" alt=""></a>
-                                        </div>
                                         <div class="mini_cart_wrapper">
                                             <a href="javascript:void(0)"><img src="assets/img/shopping-bag.png"
                                                     alt=""></a>
                                             <span class="cart_quantity">2</span>
+                                        </div>
+                                        <div class="header_wishlist">
+
+                                            @if (Route::has('login'))
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="top_right text-right">
+                                                        <ul>
+                                                            @auth
+                                                                <div class="row">
+                                                                    <div class="col-sm-6">
+                                                                        <li class="nav-item dropdown">
+                                                                            <a id="navbarDropdown"
+                                                                                class="nav-link dropdown-toggle" href="#"
+                                                                                role="button" data-bs-toggle="dropdown"
+                                                                                aria-haspopup="true" aria-expanded="false"
+                                                                                v-pre>
+                                                                                {{ Auth::user()->name }}
+                                                                            </a>
+
+                                                                            <div class="dropdown-menu dropdown-menu-end"
+                                                                                aria-labelledby="navbarDropdown">
+                                                                                <a class="dropdown-item"
+                                                                                    href="{{ route('logout') }}"
+                                                                                    onclick="event.preventDefault();
+                                                                                document.getElementById('logout-form').submit();">
+                                                                                    {{ __('Logout') }}
+                                                                                </a>
+
+                                                                                <form id="logout-form"
+                                                                                    action="{{ route('logout') }}"
+                                                                                    method="POST" class="d-none">
+                                                                                    @csrf
+                                                                                </form>
+                                                                            </div>
+                                                                    </div>
+                                                                </div>
+                                                            @else
+                                                                <li><a href="{{ route('login') }}">Login</a></li>
+                                                            @endauth
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -197,6 +188,4 @@
         </main>
     </div>
 </body>
-
-
 </html>

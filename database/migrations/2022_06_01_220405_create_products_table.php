@@ -17,8 +17,8 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('price');
+            $table->integer('qty');
             $table->string('photo');
-            $table->enum('product_status',['available','out of stock'])->default('available');
             $table->string('description');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');

@@ -662,12 +662,14 @@ section.shipping_area {
 @media only screen and (max-width: 767px){
     .main_header {
         padding-bottom: 0;
+        background-color: wheat !important;
     }
 }
 
 @media only screen and (max-width: 991px) and (min-width: 768px){
     .main_header {
         padding-bottom: 0px;
+        background-color: wheat !important;
     }
 }
 

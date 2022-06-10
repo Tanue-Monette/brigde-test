@@ -978,7 +978,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .header_middle {
   padding: 25px 0;
-  background: #3e51eb;
+  background: #c5c4c9;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .header_middle {
@@ -1540,7 +1540,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 /*header middel css end*/
 /* 2.4 main menu css here */
 .main_menu_area {
-  background: #1D1678;
+  background: #abaabd;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .main_menu_area {

@@ -34,24 +34,24 @@
                     </div>
                 @endif
                 @foreach ($products as $product)
-                    <div class="col-md-3 mb-3">
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="dropdown">
-                                    <button onclick="myFunction()" class="dropbtn" style=" margin-left: 200px;">...</button>
-                                    <div id="myDropdown" class="dropdown-content">
-                                        <a href="products-edit/{{ $product->id }}">Edit</a>
-                                        <a href="product-delete/{{ $product->id  }}">Delete</a>
-                                    </div>
+                    
+                    <div class="card shadow p-3 mb-5 bg-white rounded ml-5 -mt-px" style="width: 18rem;">
+                        <div class="card-header">
+                            <div class="dropdown">
+                                <button onclick="myFunction()" class="dropbtn" style=" margin-left: 200px;">...</button>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="products-edit/{{ $product->id }}">Edit</a>
+                                    <a href="product-delete/{{ $product->id  }}">Delete</a>
                                 </div>
                             </div>
-                            <img class="card-img-top" src="/Image/{{ $product->image }}"
-                                style="height: 100px; width: 150px;" alt="">
-                            <div class="card-body">
-                                <h3>Name: {{ $product->name }}</h3>
-                                <P>Price: {{ $product->price }}</P>
-                                <p>Details: {{ $product->description }}</p>
-                            </div>
+                        </div>
+                        <img class="card-img-top" src="{{ url('public/images/' . $product->photo) }}"
+                            alt="product item">
+                        <div class="card-body">
+                            <h3 class="card-title">Name: {{ $product->name }}</h3>
+                            <p class="current_price">Price: {{ $product->price }}</p>
+                            <p class="current_price">Details: {{ $product->description }}</p>
+                            <a href="/" class="btn btn-primary">More</a>
                         </div>
                     </div>
                 @endforeach
