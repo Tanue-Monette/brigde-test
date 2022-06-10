@@ -31,7 +31,7 @@
                                 <br>
                                 <br>
                                 <h4>
-                                    <a href="/">
+                                    <a href="{{ route('product.create') }}">
                                         <i class="fa-solid fa-plus"></i>
                                         <span>Add Produt/Service</span>
                                     </a>
